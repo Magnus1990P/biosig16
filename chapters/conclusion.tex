@@ -1,0 +1,72 @@
+
+\begin{table}[h]
+\begin{minipage}{0.48\linewidth}
+	\centering
+	\begin{tabular}{l  r r r}
+		\bf{Metric} 								& \bf{Good} & \bf{Bad} \\\hline
+		 IQA  Iris Area							& 34   & 	 10073\\
+		 IQA  Iris angle offset			& 9056 & 		1051\\
+		 IQA  Focus									& 216  &  	9891\\
+		 IQA  Motion Magnitude 			& 138  & 		9969\\
+		 IQA  Pupil dilation				& 0    & 	 10107\\
+		 BIQA  Usable iris area			& 4267 & 		5840\\
+		 BIQA Iris-Pupil Contrast		& 6465 & 		3642\\
+		 BIQA Iris-Sclera contrast	& 7535 & 		2572\\
+		 BIQA Pupil-Iris Ratio			& 6266 & 		3841\\
+		 BIQA GSU										& 2413 & 		7694\\
+		 BIQA NIQE									& 3423 & 		6684\\
+		 BIQA BRISQUE								& 2567 & 		7540\\
+		 BIQA JP2KNR								& 3886 & 		6221\\
+		 BIQA BIQI									& 6684 & 		3423\\\hline
+	\end{tabular}
+	\caption{Individual classification summary}
+	\label{tab:indclas}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+	\centering
+	\begin{tabular}{l  r r r}
+		\bf{Metric} 								& \bf{Good} 	& \bf{Poor} 			\\\hline
+		 IQA  Iris Area							&  						&	\checkmark   	\\
+		 IQA  Iris angle offset			&  						& \checkmark 		\\
+		 IQA  Focus									&   					& \checkmark   	\\
+		 IQA  Motion Magnitude 			&   					& \checkmark  	\\
+		 IQA  Pupil dilation				&    					& \checkmark  	\\
+		 BIQA  Usable iris area			&  						& \checkmark 		\\
+		 BIQA Iris-Pupil Contrast		& \checkmark  & 		\\
+		 BIQA Iris-Sclera contrast	& \checkmark  & 		\\
+		 BIQA Pupil-Iris Ratio			& \checkmark  & 		\\
+		 BIQA GSU										& \checkmark  & 		\\
+		 BIQA NIQE									& \checkmark  & 		\\
+		 BIQA BRISQUE								& \checkmark  & 		\\
+		 BIQA JP2KNR								&	\checkmark  & 		\\
+		 BIQA BIQI									& \checkmark  & 		\\\hline
+	\end{tabular}
+	\caption{Conclusion to metric applicability}
+	\label{tab:appl}
+\end{minipage}
+\end{table}
+
+
+\section{Conclusion}
+\label{sec:conc}
+In this paper I have explored and developed tools for extracting and evaluating
+the applicability of using certain metrics to ascertain the quality and ability
+to classify images of the periocular region, captured in the visible wavelength
+spectrum.
+
+I concentrated on three 3rd party tools, the metrics proposed by Hugo
+Proenca\cite{hugo} and metrics dictated by the ISO standard 29794-6\cite{iso}.
+
+From the metrics proposed by these I selected the following subset of metrics,
+see table \ref{tab:appl}, which should explored and further tested.  The table
+summarises my conclusion of which metrics can be proposed as "good" for images
+captured in the visible wavelength spectrum.
+
+However, this conclusion still needs to be further investigated because of the
+way the tools has been developed and any errors which may have been made,
+especially by the OSIRISv4.1\cite{osiris}.  However, in consideration to this,
+my conclusion is still, with the results shown, that table \ref{tab:appl} 
+summarises which metrics are most applicable.
+
+

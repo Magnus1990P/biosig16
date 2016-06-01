@@ -1,0 +1,38 @@
+
+\section{Testing Methodology}\label{sec:test}
+To perform classification 625 "good" and 560 "bad" images was manually
+classified using webIIC \cite{webiic} and used for training the support vector
+machine (SVM). The testing was done by using an SVM to classify the individual
+metrics on the data sets to ascertain the distribution then analyse the results.
+
+After randomly exploring these data sets, I've noticed a large portion of the
+images are of lower quality. After classification the result was plotted using a
+scatter-plot diagram for illustrative purposes which shows the overlap and can
+be used for further analysis.
+
+
+
+
+\section{Data sets}\label{sec:dataset}
+Three databases was used for this paper and consisted of totally 11.292 images
+of the periocular region of the face.  Originally it was 12.689, but some images
+could not be used because of errors occurring in OSIRIS v4.1\cite{osiris}.
+The data sets which has been used in this paper is the UBIRIS.v2\cite{ubiris},
+MICHE\cite{miche} and an independent data set captured at Norwegian University of
+Technology and Science (NTNU).
+
+UBIRISv2. consists of images captured at a distance during movement. It was 
+created by Hugo Proenca, et al \cite{ubiris}. The images are 600x400 pixels and
+of varying quality. Most images are focused on the periocular region, but
+several have failed to capture the iris.  The data set I've used contained a
+total of 11101 images.
+
+The MICHE\cite{miche} data set contains large images of the periocular region. 
+The images are captured in various environments using either an iPhone 5 or 
+Samsung Galaxy using both cameras on each phone and in two environments for each
+camera. MICHE contains images of varying quality and resolution. In total I've
+used 1536 of the images from MICHE.
+
+The last data set is generated at NTNU and contains 52 high quality images of
+uniform lighting.
+

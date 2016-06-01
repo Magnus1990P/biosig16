@@ -1,0 +1,71 @@
+\section{Support tools}
+\label{sec:support}
+
+While developing the main tools, I was forced to develop some support tools in
+order to manage the databases of images, generating Matlab files, classification
+and automation of the segmentation processing with OSIRIS\cite{osiris}.
+
+
+\subsection{WebIIC}
+\label{sec:webiic}
+Web Iris Image Classifier (WebIIC)\cite{webiic} performs the task of performing
+manual classification of images in the database.  The WebIIC has three tasks;
+load the list of images into the database, classification of images, and manual
+positioning of the right pupil, left pupil and left iris. These points must be
+aligned align along the centre of the pupil along the Y-axis.
+
+The latter task is because of future ability to redo segmentation with fixed
+values for pupil and iris size and position.  OSIRIS v4.1 does not allow for
+this at the current time.
+
+WebIIC eases the process of classifying images manually significantly and makes
+the classification random.  This because it selects the subset of all images not
+yet classified, then performs a random selection of one image from this subset.
+Which is then loaded into the web frontend for classification or manual point
+selection.
+
+The classification allows an image to be set to either of three values,
+"Not Classified", "Good", "Bad" or "Error". The error class is used for very
+poorly classified images, but is not used in this project.
+
+\begin{description}
+\item [Good] The image receives a classification of "1" in the "CLASS" field.
+\item [Bad]  The image receives a classification of "0" in the "CLASS" field.
+\item [Error] The image receives a classification of "-2" in the "CLASS" field.
+\item [Skip] Nothing is done and the image is skipped, maintain current "CLASS"
+	which is by default "-1".
+\end{description}
+
+
+
+\subsection{DBIris}
+\label{sec:dbiris}
+
+DBIris\cite{dbiris} consists of several scripts, with the goal of generating a
+file containing all the databases.  Which contains all the images successfully
+processed by OSIRIS v4.1\cite{osiris}.  The finished files are to be used by
+webIIC for loading images into its database and by BIQA and IQA to load images
+for metric extraction.
+
+The first script to use is the "osiris\_gen.py" which takes a single file
+containing the full path of each image to process.  This will run each image
+through the defined configurations for OSIRIS, until the iris is found and
+segmented or no more configuration files are available. The resulting images are stored in
+the defined folder according to the OSIRIS configuration files.
+
+The second script to run is the "dbGenerator.py" which takes the same file as
+"osiris\_gen.py" uses, an integer stating how many databases to create, the path
+to the Matlab file containing the databases and the path to the file to be used
+by webIIC.
+
+The third script, which is reserved for the future, is the "osiris\_man\_gen.py"
+which generates the segmented iris and pupil image(without occlusion assessment)
+and the mask for iris area.
+
+DBIris also stores all the images in two folders, the "db\_periocular" and
+"img\_processed" by default.  Making it easier to mange for all applications by
+having a centralised repository.
+
+
+
+

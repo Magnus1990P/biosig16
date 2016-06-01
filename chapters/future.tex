@@ -1,0 +1,29 @@
+\section{Future work}
+
+\paragraph{OSIRISv4.1}
+Trying to process large data sets, long list of images, OSIRISv4.1 has a severe 
+memory leak on large data sets. Which currently must be mitigated by splitting 
+the list or run a program on the side which initialises OSIRIS for every image.
+
+While automating the OSIRISv4.1 I encountered errors where the current image
+failed, but no errors was issued and errors was given for the next images, which
+processed correctly.  This caused some issues during my automation process.
+This was mitigated by avoiding error handling all together and creating a second
+script which is run after all OSIRISv4.1 processes has ended.
+
+
+\paragraph{Further development of BIQA and IQA}
+Current development of this project and its tools is serialised tasks in Matlab
+which takes a long time to run.  Processing 12.000 images on a Debian 7 Wheezy,
+using 6GB RAM and four 2.3GHz Cores takes approximately 24 hours with IQA and 18
+hours with BIQA.  Pre-processing the images using the automated python script
+which tries up to three configurations per image takes also approximately 3-4
+hours using OSIRISv4.1.
+
+All of this has to be streamlined into a multihreaded application in order to
+reduce the time spent idling. With a tailored application for this, the time
+spent processing the entire data set should be shortened to maximum a couple of
+hours.
+
+
+

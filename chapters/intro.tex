@@ -1,0 +1,19 @@
+\section{Introduction}
+Current quality metrics(QM) used in iris recognition is based on the Near
+Infra-Red (NIR) spectrum.  This paper explored several methods to extract QMs
+from an image in the visible wavelength(VW) spectrum. The extracted metrics is 
+then used as input to an SVM classifier before the metrics ability to classify
+the data set is analysed.
+
+This project was done due to the increasing popularity of using iris recognition
+on photos in the VW spectrum.  Therefore it is important to verify the quality
+of the image, which this paper has explored.  However, the classification has
+not been run through a comparison test because it is out of the scope.
+
+The paper created two tools for extracting QMs from periocular images. "Blind 
+Image Quality Assessment" (BIQA) \cite{biqa} extracts twenty-three metrics, of
+which a subset are used for assessment.  "Iris Quality Assessment" (IQA)
+\cite{iqa} is a reproduction of Hugo Proenca paper "Quality Assessment 
+of Degraded iris images acquired in the visible wavelength" \cite{hugo}. IQA 
+collects the same metrics as Proenca, except for the iris pigmentation metric.
+

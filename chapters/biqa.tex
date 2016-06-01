@@ -1,0 +1,74 @@
+
+\subsection{Blind Image Quality Assessment (BIQA)}\label{sec:biqa}
+BIQA is based on metrics described in the ISO standard 29794-6\cite{iso},
+and four 3rd party tools; the NIQE\cite{niqe}, BRISQUE\cite{brisque},
+JP2KNR\cite{jp2knr}, and BIQI\cite{biqi}.
+Table \ref{tab:indclas} shows the different metrics retrieved from
+the images, marked with "BIQA". Not all of metrics gathered are used for the process of training and
+classifying a SVM, but may be used later and is currently used for retrieving 
+and calculating the other ISO metrics.
+
+
+
+\paragraph{Usable Iris Area}
+The usable iris area, as standardised in section 6.2.1 of the ISO 29794-6
+\cite{iso}, is the non-occluded area of the iris.
+The method used in this paper is a simple calculation of calculating the
+percentage iris that is missing due to the size of the pupil.
+\begin{align}
+	UIA &= (1-\frac{N_{occluded}}{N_{iris}} ) \cdot 100
+\end{align}
+
+
+
+\paragraph{Iris-Pupil Contrast}
+The contrast between the iris and pupil is stated in section 6.2.3 of ISO
+29794-6\cite{iso}. 
+The implementation uses data sampling from the iris and pupil 
+area, not the entire area.  The iris and pupil values are selected by
+calculating the median values, then calculating the contrast using these values.
+In addition the Weber ratio formula, it implements the same formula as for the 
+iris-sclera contrast. Giving an extra metric.
+
+\begin{align}
+	weber\_ratio &= \frac{|iris - pupil|}{1 + pupil}	\\
+	IPC &= \frac{weber}{0.75 + weber}
+\end{align}
+
+
+
+\paragraph{Iris-Sclera Contrast}
+The ISO standard provides a method to compute the contrast between the iris area
+and the sclera. By measuring the lightness of the sclera area and the iris 
+separately one can compute the contrast ratio, using the formula from the ISO
+standard 29794-6 section 6.2.2 \cite{iso}.  This papers approach is the same as
+for iris-pupil contrast by using samples instead of the entire area. BIQA then
+uses the median values of the samples.
+\begin{align}
+	ISC = \frac{|sclera - iris|}{sclera + iris} \cdot 100
+\end{align}
+
+
+
+
+\paragraph{Grey Scale Utilisation (GSU)}
+The GSU is measured as the entropy of grey scale pixels and represents
+the number of bits needed to represent the image.  The entropy is calculated as
+below. Where, $p_i$ is the number of pixels with a given value, $p$ is the
+number of all pixels and $P(p_i)$ is the probability of $p_i$ occurring in the 
+pixel set.  BIQA calculates the GSU for both the entire image and a subset of 
+the iris, giving two separate metrics.
+\begin{align}
+	H &= -\Sigma p_i \log_2 p_i \\
+	P(p_i) &= \frac{ \Sigma{p_i} }{ \Sigma{p} }
+\end{align}
+
+
+
+\paragraph{General Metrics}
+In addition to the more specific ISO standard requirements for image quality,
+the ISO standard\cite{iso} sets forth additional metrics to assess the quality
+of the iris image captured.  Which some are extracted, but not used for this
+paper.
+
+

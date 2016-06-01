@@ -1,0 +1,40 @@
+\subsection{Result}
+\label{sec:res}
+After inspecting the individual metrics ability to perform classification based
+on the 625/560 images used for training is quite well.  During my initial
+analysis of the metric distributions before classification, I believed several
+of the would do well.  The resulting scatter plots from the classifications
+shows that the 3rd party tools work very well on classifying the images as good
+or bad with minimal training.
+
+The 1185 images used for training represent a portion of ~10.5\%\ of all images
+used. This 5.5\%\ "good" images was used to train against "good" image metrics,
+while 4.9\%\ "bad" images was used to train against "bad" image metrics.
+
+This is quite small number and should be increased in future tests to verify the
+results.
+
+The metrics which performed good on classification was, BIQA Iris-Pupil contrast
+metric (fig. \ref{fig:clas_ipc}), BIQA Iris-Sclera contrast metric (fig.
+\ref{fig:clas_isc}) BIQA Pupil-iris ratio metric(fig. \ref{fig:clas_pir}), BIQA
+GSU metric(fig. \ref{fig:clas_gsu}), NIQE\cite{niqe} (fig. \ref{fig:clas_niqe}),
+BRISQUE\cite{brisque} (fig. \ref{fig:clas_brisque}), JP2KNR\cite{jp2knr}(fig.
+\ref{fig:clas_jp2knr}), and BIQI\cite{biqi} (fig. \ref{fig:clas_biqi}).
+
+The result is that this subset of metrics of "good" metrics are very likely to
+be applicable for images captured in the visible wavelength spectrum.  The
+remaining metrics are due to poor implementation, or that the data not usable
+for classifying images of irises in the visible wavelength spectrum.
+
+There was many hinders in order to perform this project, the level of Hugo
+Proencas paper\cite{hugo} which was too advanced at some points in the project,
+OSIRISv4.1\cite{osiris}, which has many bugs at its current state.  Segmentation
+fault, unable to discovering pupil and iris boundaries on high resolution and
+high quality images.  This begs the question whether OSIRISv4.1 in itself is
+applicable for performing pupil and iris discovery as well as segmentation on
+images in visible wavelength spectrum.  The last was the state of the data sets,
+many images don't have irises visible in the image, way to occluded or otherwise
+degraded.
+
+
+

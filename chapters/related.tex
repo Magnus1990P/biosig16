@@ -1,0 +1,53 @@
+\section{Related work}
+This paper has explored and developed two systems for extracting blind quality 
+features from periocular images captured in the visible wavelength (VW)
+spectrum.
+The resulting features is then run through a SVM for training and classification
+where the training set was manually classified.
+
+First off, BIQA\cite{biqa} is the system which was based upon metrics gathered
+from the ISO standard\cite{iso} and various methods as detailed below. Which
+include the tools NIQE \cite{niqe}, BRISQUE \cite{brisque}, NSS \cite{nss},
+JP2KNR \cite{jp2knr} and BIQI\cite{biqi}.
+
+It has already been done work on blind image quality assessment, especially the 
+University of Texas\footnote{University of Texas:
+\texttt{http://live.ece.utexas.edu/research/Quality/index.htm}}.
+The paper has implemented the following blind image quality assessment (BIQA)
+tools that has been published and are publicly available; BRISQUE, JP2KNR
+Quality metric, BIQI, and NIQE.
+
+Anish Mittal, Rajiv Soundararajan, and Alan C. Bovik\cite{niqe} has developed a
+blind image quality model called "Natural Image Quality Evaluator" (NIQE) which
+runs through an image and assess its quality based on a statistical models for
+the natural scene statistics (NSS) based on L. Ruderman article "The Statistics
+of Natural Images"\cite{nss}.
+
+Anish Mittal, Anush K. Moorthy, and Alan C. Bovik has proposed a BIQA model
+operating on the spacial domain, "Blind/Referenceless Image Spatial Query
+Evaluator" (BRISQUE)\cite{brisque}.  This model focuses on using scene
+statistics to quantify possible losses of "naturalness", resulting in a holistic
+measure of quality.
+
+Hamid R. Sheikh, Alan C. Bovik and Lawrence Cormack \cite{jp2knr} has proposed a
+method of applying NSS to measure the quality of images compressed using wavelet
+based image compression.  The hypothesis they started with was that the
+compression results in loss of quality that can be related to human perception
+of quality.
+
+The tool "Blind Image Quality Index" (BIQI)\cite{biqi} developed by Anush
+K. Moorthy and Alan C. Bovik is focusing on assessing the distortions
+in an image. BIQI is based on a trained classifier that does not require any
+prior knowledge once its trained and can be extended to assess any type of
+distortion.  As with the NIQE\cite{niqe}, BIQI is based on an NSS model.
+
+For the other metrics being implemented in this project, I have relied on the
+ISO 29794-6 standard\cite{iso}.
+
+For the second tool, the Iris Quality Assessment (IQA)\cite{iqa}, I've reversed
+engineered Hugo Proencas paper\cite{hugo}.  Many of the points in this
+paper are overlapping with the metrics from the ISO standard.  Hugo proposes to
+use seven metrics as the basis for classification. This paper implemented
+six of them.
+
+
