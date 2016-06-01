@@ -1,0 +1,70 @@
+\documentclass[english]{lni}
+
+\IfFileExists{latin1.sty}{\usepackage{latin1}}{\usepackage{isolatin1}}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{listings} %if lstlistings is used
+\usepackage{changepage} %for changing topmargin on first page
+\usepackage{amsmath, amssymb, gensymb}
+\usepackage[figurename=Abb., tablename=Tab., small]{caption}[2016/04/20]
+\renewcommand{\lstlistingname}{List.}    % Listingname heißt nun List. 
+
+%Beginn der Seitenzählung für diesen Beitrag
+\setcounter{page}{1}
+
+%Kopfzeileneinstellungen
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\small Paper handin for:\hspace{5mm} BIOSIG 2016\\Author:
+%							\hspace{17mm}Magnus {\O}verb{\o}}
+							\hspace{17mm}[FIRST NAME] [LAST NAME]}
+\fancyhead[R]{\small Page \thepage}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\setcounter{footnote}{0}
+
+%\author{Magnus {\O}verb{\o}\footnote{NTNU, Gj{\o}vik, Norway, magnus.overbo@stud.ntnu.no}}
+\author{[First Name] [Last Name]\footnote{[SCHOOL], [LOCATION], [COUNTRY], [EMAIL]}}
+\title{Distribution Assessment of Iris Quality Metrics\\for Visible Wavelength
+photos}
+
+
+\begin{document}
+\maketitle
+\setcounter{footnote}{2}
+
+\begin{abstract}
+\input{chapters/abstract}
+\end{abstract}
+
+\begin{keywords}
+	iris, visible wavelength, quality metrics, quality assessment, classification,
+	svm
+\end{keywords}
+
+
+\input{chapters/intro}
+\input{chapters/related}
+%\input{chapters/}
+\input{chapters/software}
+\input{chapters/method}
+\input{chapters/analysis}
+\input{chapters/result}
+\input{chapters/conclusion}
+\input{chapters/future}
+%\input{chapters/acknowledge}
+
+\bibliographystyle{lnig}
+\bibliography{main}
+
+\appendix
+
+%\input{chapters/tables}
+\input{chapters/figures}
+
+
+% that's all folks
+\end{document}
+
+
