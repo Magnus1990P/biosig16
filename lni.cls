@@ -156,16 +156,12 @@
 % Keywords
 \newenvironment{keywords}{\fontsize{9}{10}\selectfont
     \noindent{\bfseries Keywords:}}{}
-%\def\keywordsname{{\bf Key words:}}
 
 % Überschriften
-\renewcommand{\section}{\@startsection{section}{1}{\z@}%
-  {-16\p@ \@plus -4\p@ \@minus -4\p@}{5\p@ \@plus 4\p@ \@minus 4\p@}{\fontsize{12}{14}\fontseries{b}\selectfont}}
-%  {19pt}{8pt}{\fontsize{12}{14}\fontseries{b}\selectfont}}
-\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
-  {-16\p@ \@plus -4\p@ \@minus -4\p@}{8\p@ \@plus 4\p@ \@minus 4\p@}{\fontsize{10}{12}\fontseries{b}\selectfont}}
-%  {16pt}{4pt}{\fontsize{10}{12}\fontseries{b}\selectfont}}
-% weitere nicht durch Formatvorlage geklärt
+\renewcommand{\section}{\vspace{-3mm}\@startsection{section}{1}{\z@}%
+  {-16\p@ \@plus -4\p@ \@minus -4\p@}{1\p@ \@plus 4\p@ \@minus 4\p@}{\fontsize{12}{14}\fontseries{b}\selectfont}}
+	\renewcommand{\subsection}{\vspace{-4mm}\@startsection{subsection}{2}{\z@}%
+  {-16\p@ \@plus -4\p@ \@minus -4\p@}{1\p@ \@plus 4\p@ \@minus 4\p@}{\fontsize{10}{12}\fontseries{b}\selectfont}}
 
 % Bildunterschriften
 \setlength{\abovecaptionskip}{4pt}%Abstand vor der Bildunterschrift

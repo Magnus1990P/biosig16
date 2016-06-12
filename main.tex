@@ -3,12 +3,14 @@
 \IfFileExists{latin1.sty}{\usepackage{latin1}}{\usepackage{isolatin1}}
 
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{fancyhdr}
 \usepackage{listings} %if lstlistings is used
 \usepackage{changepage} %for changing topmargin on first page
 \usepackage{amsmath, amssymb, gensymb}
 \usepackage[figurename=Abb., tablename=Tab., small]{caption}[2016/04/20]
 \renewcommand{\lstlistingname}{List.}    % Listingname heißt nun List. 
+\renewcommand{\paragraph}[1]{{\bf#1}}
 
 %Beginn der Seitenzählung für diesen Beitrag
 \setcounter{page}{1}
@@ -58,10 +60,6 @@ photos}
 \bibliographystyle{lnig}
 \bibliography{main}
 
-\appendix
-
-%\input{chapters/tables}
-\input{chapters/figures}
 
 
 % that's all folks
